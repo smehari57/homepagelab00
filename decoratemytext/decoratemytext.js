@@ -8,12 +8,12 @@ function bc(){
 } 
 function ck(){
  if(document.getElementById("cked").checked){
-    document.getElementById("textarea").style.fontweight = "bold";
+    document.getElementById("textarea").style.fontWeight = "bold";
     document.getElementById("textarea").style.color = "green";
     document.getElementById("textarea").style.textDecoration= "underline";
     document.body.style.backgroundImage = "url('silverware.jpg')";
  }else{
-    document.getElementById("textarea").style.fontweight = "normal";
+    document.getElementById("textarea").style.fontWeight = "normal";
     document.getElementById("textarea").style.color = "black";
     document.getElementById("textarea").style.textDecoration= "none";
     document.body.style.backgroundImage = "";
