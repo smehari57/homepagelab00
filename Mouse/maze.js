@@ -17,14 +17,15 @@ $(document).ready(function () {
           lostAction();
           flag = true;
         });
+        $("#end").mouseenter(function () {
+          winAction();
+          flag = false;
+  
+        });
     }
     else {
       $("div .boundary").removeClass("youlose");
-      $("#end").mouseenter(function () {
-        winAction();
-        flag = false;
-
-      })
+      
     }
 
   })
