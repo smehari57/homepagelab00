@@ -6,9 +6,9 @@
 "use strict";
 $(document).ready(function () {
 
-    var count = 0;//count variable for left and right positioning
-    var arr = []; //array used for storing the filled position for shuffling
-    var EMPTY_SQUARE = {};//Object which stores and updates the empty div let and top
+    let count = 0;//count variable for left and right positioning
+    let arr = []; //array used for storing the filled position for shuffling
+    let EMPTY_SQUARE = {};//Object which stores and updates the empty div let and top
     EMPTY_SQUARE.leftx = "300px";//initial left and top positions respectively
     EMPTY_SQUARE.toppx = "300px";
 
@@ -17,28 +17,28 @@ $(document).ready(function () {
     $('#puzzlearea div').each(function ()
     {
         
-        var filledSquares = {};
-        var x = ((count % 4) * 100);
-        var y = (Math.floor(count / 4) * 100);
+        let filledSquares = {};
+        let x = ((count % 4) * 100);
+        let y = (Math.floor(count / 4) * 100);
         $(this).addClass('puzzlepiece');
-        var leftpx = x + 'px';
-        var toppx = y + 'px';
+        let leftpx = x + 'px';
+        let toppx = y + 'px';
         filledSquares.leftpx = leftpx;
         filledSquares.toppx = toppx;
         arr.push(filledSquares);
       
-        $(this).css({"left": leftpx, "top": toppx, "backgroundImage": "url('images/background.jpg')", "backgroundPosition": -x + 'px ' + (-y) + 'px'});
+        $(this).css({"left": leftpx, "top": toppx, "backgroundImage": "url('images/frozen.jpg')", "backgroundPosition": -x + 'px ' + (-y) + 'px'});
         count++;
     });
 
-    var images= ["url('images/background.jpg')"];
+    let images= ["url('images/background.jpg')"];
 
 //this function checks if the square can be moved, and swaps the value for emptysquare
     $('.puzzlepiece').click(function ()
     {
 
-        var changedleft = $(this).css("left");
-        var changedtop = $(this).css("top");
+        let changedleft = $(this).css("left");
+        let changedtop = $(this).css("top");
         if (clickableleft(changedleft, changedtop))
         {
             $(this).css({"left": EMPTY_SQUARE.leftx, "top": EMPTY_SQUARE.toppx});
@@ -58,7 +58,7 @@ $(document).ready(function () {
     $('#shufflebutton').click(function () {
 
 //        console.log(arr); //for debugging purpose
-        var i = 0, j = 0,suff=0, temp = null;
+        let i = 0, j = 0,suff=0, temp = null;
 
         for (i = arr.length - 1; i > 0; i -= 1) {
             j = Math.floor(Math.random() * (i + 1));
@@ -84,8 +84,8 @@ $(document).ready(function () {
     $('.puzzlepiece').hover(function ()
     {
 //        console.log(EMPTY_SQUARE);
-        var changedleft = $(this).css("left");
-        var changedtop = $(this).css("top");
+        let changedleft = $(this).css("left");
+        let changedtop = $(this).css("top");
 //        console.log("left: " + changedleft + " changedtop: " + changedtop);
 
         if (clickableleft(changedleft, changedtop))
@@ -102,7 +102,7 @@ $(document).ready(function () {
     });
 
     //helper function for finding the neighbouring elements on the left
-    var clickableleft = function (changedleft, changedtop)
+    let clickableleft = function (changedleft, changedtop)
     {
         if (parseInt(changedtop) === parseInt(EMPTY_SQUARE.toppx))
         {
@@ -118,7 +118,7 @@ $(document).ready(function () {
     };
 
     //helper function for finding the neighbouring elements on the right
-    var clickableTop = function (changedleft, changedtop)
+    let clickableTop = function (changedleft, changedtop)
     {
         if (parseInt(changedleft) === parseInt(EMPTY_SQUARE.leftx))
         {
