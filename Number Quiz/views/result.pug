@@ -1,0 +1,11 @@
+html
+  head
+    title= 'Number Quiz'
+  body(style={background:'powderblue', 'font-weight':'bold'}) 
+    div(style={margin:'50px 400px', border:'2px solid black'})
+      h1= 'The Number Quiz'
+
+      p= 'Your current score is '+ score 
+      p= 'You have completed the Number Quiz, with score of '+ score+ ' out of '+ max
+      a(href="http://localhost:5050/")='Restart the game>>' 
+      

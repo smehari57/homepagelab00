@@ -1,0 +1,18 @@
+html
+  head
+    title= 'Number Quiz'
+  body(style={background:'powderblue', 'font-weight':'bold', 'font-size':'20pt'}) 
+    div(style={margin:'50px 400px', border:'2px solid black'})
+      form(method="POST" action= "http://localhost:5050/submit")
+        h1= 'The Number Quiz'
+
+        p= 'Your current score is '+ score 
+        p= 'Guess the number in the sequence.'
+        p= sequence 
+
+        label= 'Your answer: '
+          input(type="number" name="answer")
+          br 
+          input(type="submit" style={'font-size':'20px'})
+
+    
