@@ -16,7 +16,7 @@ app.use(express.static("./"));
 app.get('/', (req, res) => {
 
   var word= req.query.word;
-  // fetch the data and put it to res to send it back to client requesting it
+ 
   var query= require('./word');
   query.queryWord(word, res);
   

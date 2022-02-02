@@ -2,8 +2,6 @@
 
 function updateHtml(data){
 
-  // console.log(data[0].definition);
-
   var showThis= "";
   for(var i=0; i<data.length; i++){
     var type= data[i].wordtype;
