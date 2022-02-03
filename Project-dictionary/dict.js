@@ -3,7 +3,7 @@ $(document).ready(()=>{
   $('#lookup').click(()=>{
     var word= $('#word').val();
     $.ajax({
-      "url": "http://localhost:2021/?word="+word, 
+      "url": "http://localhost:5577/?word="+word, 
     
       "type": "GET",
       "success": (data)=>{
